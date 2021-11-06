@@ -10,6 +10,7 @@ namespace SourceCol
     {
         static void Main(string[] args)
         {
+
             //PUNTO 2
             //Se pide número a validar, por defecto se pone 1, aunque se podría validar ingreso del usuario
             Console.WriteLine("Ingrese un entero para validar si cumple con la sucesión de Fibonacci (1 por defecto): ");
@@ -19,6 +20,30 @@ namespace SourceCol
             Console.WriteLine(validateFibonacci);
 
             Console.ReadLine();
+
+
+            // PUNTO 1
+            // Se pide al usuario la cadena de texto
+            Console.WriteLine("Ingrese una cadena de texto: ");
+            string completeText = Console.ReadLine();
+
+            // Se solicita la cántidad máxima de caracteres para realizar el recorte, si no se da ningún valor, por defect es 20
+            Console.WriteLine("Ingrese una cantidad máxima de caracteres(20 por defecto): ");                    
+            int maxChars = int.TryParse(Console.ReadLine(), out maxChars) ? maxChars : 20;
+
+            string trimText = TrimString(completeText, maxChars);
+            Console.WriteLine(trimText);
+
+
+            
+
+            Console.ReadLine();
+
+        }
+
+        private static string TrimString(string completeText, int maxChars)
+        {
+            return completeText.Length <= maxChars ? completeText : completeText.Substring(0, maxChars) + "...";
 
         }
 
@@ -47,3 +72,5 @@ namespace SourceCol
         
     }
 }
+
+
